@@ -1,0 +1,47 @@
+# Clean, fast prompt. Uses plain symbols so it works without special fonts.
+# Docs: https://starship.rs/config/
+
+add_newline = true
+format = "$directory$git_branch$git_status$python$nodejs$rust$golang$cmd_duration$jobs$status\n$character"
+
+[directory]
+style = "bold blue"
+truncation_length = 4
+truncate_to_repo = true
+
+[git_branch]
+format = "[on $branch]($style) "
+style = "bold purple"
+
+[git_status]
+format = '([\[$all_status$ahead_behind\]]($style) )'
+style = "yellow"
+
+[cmd_duration]
+min_time = 2000
+format = "took [$duration]($style) "
+style = "yellow"
+
+[jobs]
+symbol = "bg:"
+
+[status]
+disabled = false
+format = "[exit $status]($style) "
+style = "red"
+
+[character]
+success_symbol = "[❯](bold green)"
+error_symbol = "[❯](bold red)"
+
+[python]
+format = '[py $version( \($virtualenv\))]($style) '
+
+[nodejs]
+format = "[node $version]($style) "
+
+[rust]
+format = "[rs $version]($style) "
+
+[golang]
+format = "[go $version]($style) "
