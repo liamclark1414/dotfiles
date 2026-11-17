@@ -1,55 +1,76 @@
-# Clean, fast prompt. Uses plain symbols so it works without special fonts.
+# ~/.config/starship.toml
+# Theme: Middle-earth. Colours use the terminal's own palette (yellow, green…)
+# so the prompt follows each place's kitty theme automatically.
 # Docs: https://starship.rs/config/
 
 add_newline = true
-format = "$directory$git_branch$git_status$python$nodejs$rust$golang$cmd_duration$jobs$status\n$character"
+format = """
+${custom.place}$directory$git_branch$git_status$python$nodejs$rust$golang$cmd_duration$jobs$status
+$character"""
+
+# Where in Middle-earth you are (follows the Hyprland workspace)
+[custom.place]
+command = """
+case "$(readlink ~/.config/kitty/current-theme.conf)" in
+  *bag_end*)   echo " Bag End" ;;
+  *bree*)      echo " Bree" ;;
+  *rivendell*) echo " Rivendell" ;;
+  *moria*)     echo " Moria" ;;
+  *lorien*)    echo " Lórien" ;;
+esac"""
+when = 'test -n "$HYPRLAND_INSTANCE_SIGNATURE"'
+shell = ["bash", "--noprofile", "--norc"]
+format = "[$output]($style) [·](bright-black) "
+style = "bold green"
 
 [directory]
-style = "bold #d9a24e"
+style = "bold yellow"
 read_only = " 󰌾"
-read_only_style = "#c0634f"
+read_only_style = "red"
 truncation_symbol = "…/"
 truncation_length = 4
 truncate_to_repo = true
+home_symbol = "~"
 
 [git_branch]
-format = "[ $branch]($style) "
-style = "bold #9c7a54"
+format = "[ $branch]($style) "
+style = "bold purple"
 
 [git_status]
 format = '([\[$all_status$ahead_behind\]]($style) )'
-style = "#e0c36a"
+style = "bright-yellow"
 
 [cmd_duration]
 min_time = 2000
-format = "took [$duration]($style) "
-style = "#4a5240"
+format = "[a long journey of $duration]($style) "
+style = "bright-black"
 
 [jobs]
-symbol = "bg:"
-style = "#4a5240"
+symbol = "companions:"
+style = "bright-black"
 
 [status]
 disabled = false
-format = "[exit $status]($style) "
-style = "#c0634f"
+format = "[you shall not pass ($status)]($style) "
+style = "bold red"
 
+# the cursor line: gold when all is well, red when something failed
 [character]
-success_symbol = "[❯](bold #8fa86b)"
-error_symbol = "[❯](bold #c0634f)"
+success_symbol = "[❯](bold bright-yellow)"
+error_symbol = "[❯](bold red)"
 
 [python]
 format = '[py $version( \($virtualenv\))]($style) '
-style = "#7a9bad"
+style = "blue"
 
 [nodejs]
 format = "[node $version]($style) "
-style = "#7a9bad"
+style = "blue"
 
 [rust]
 format = "[rs $version]($style) "
-style = "#7a9bad"
+style = "blue"
 
 [golang]
 format = "[go $version]($style) "
-style = "#7a9bad"
+style = "blue"
