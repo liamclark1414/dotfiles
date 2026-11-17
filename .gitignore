@@ -1,0 +1,11 @@
+# generated per place by hypr/scripts/workspace-theme.sh
+kitty/current-theme.conf
+waybar/current.css
+rofi/current.rasi
+hypr/hyprlock-place.conf
+gtk/themes/Middle-earth/gtk-3.0/colors.css
+# backups
+*.bak
+*.bak-*
+__pycache__/
+gtk/gtk-4.0/middle-earth-colors.css
