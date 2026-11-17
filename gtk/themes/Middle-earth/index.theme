@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=Middle-earth
+Comment=Per-place colours for Hyprland (generated)
+
+[X-GNOME-Metatheme]
+GtkTheme=Middle-earth

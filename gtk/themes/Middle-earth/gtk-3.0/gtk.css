@@ -1,0 +1,23 @@
+/* Middle-earth GTK3 theme: Adwaita dark + the current place's colours.
+   colors.css is rewritten per place by ~/.config/hypr/scripts/workspace-theme.sh */
+@import url("resource:///org/gtk/libgtk/theme/Adwaita/gtk-contained-dark.css");
+@import url("colors.css");
+
+@define-color theme_bg_color          @me_bg;
+@define-color theme_fg_color          @me_fg;
+@define-color theme_base_color        @me_bg;
+@define-color theme_text_color        @me_fg;
+@define-color theme_selected_bg_color @me_gold;
+@define-color theme_selected_fg_color @me_bg;
+@define-color insensitive_bg_color    @me_surface;
+@define-color borders                 @me_muted;
+
+window, .background, textview text, treeview.view, iconview, .view {
+    background-color: @me_bg; color: @me_fg;
+}
+headerbar, .titlebar, .sidebar, placessidebar, placessidebar list, menu, popover > contents {
+    background-color: @me_surface; color: @me_fg; background-image: none;
+}
+*:selected, .view:selected, row:selected { background-color: @me_gold; color: @me_bg; }
+button.suggested-action { background-image: none; background-color: @me_gold; color: @me_bg; }
+button.destructive-action { background-image: none; background-color: @me_red; color: @me_bg; }

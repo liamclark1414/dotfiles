@@ -1,0 +1,30 @@
+/* ~/.config/gtk-4.0/gtk-middle-earth.css — libadwaita / GTK4 apps inside Hyprland.
+   Colours come from middle-earth-colors.css, rewritten per place by
+   ~/.config/hypr/scripts/workspace-theme.sh. Selected at login by session-look.sh. */
+@import url("middle-earth-colors.css");
+
+@define-color window_bg_color      @me_bg;
+@define-color window_fg_color      @me_fg;
+@define-color view_bg_color        @me_bg;
+@define-color view_fg_color        @me_fg;
+@define-color headerbar_bg_color   @me_surface;
+@define-color headerbar_fg_color   @me_fg;
+@define-color headerbar_backdrop_color @me_bg;
+@define-color sidebar_bg_color     @me_surface;
+@define-color sidebar_fg_color     @me_fg;
+@define-color sidebar_backdrop_color @me_bg;
+@define-color card_bg_color        @me_surface;
+@define-color card_fg_color        @me_fg;
+@define-color popover_bg_color     @me_surface;
+@define-color popover_fg_color     @me_fg;
+@define-color dialog_bg_color      @me_surface;
+@define-color dialog_fg_color      @me_fg;
+@define-color accent_color         @me_gold;
+@define-color accent_bg_color      @me_gold;
+@define-color accent_fg_color      @me_bg;
+@define-color destructive_color    @me_red;
+@define-color destructive_bg_color @me_red;
+@define-color destructive_fg_color @me_bg;
+@define-color success_color        @me_green;
+@define-color warning_color        @me_gold;
+@define-color error_color          @me_red;

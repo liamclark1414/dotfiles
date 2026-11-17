@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Restore GNOME look
+Comment=Undo the Hyprland Middle-earth GTK/icon/cursor theme when logging into GNOME
+Exec=sh -c '"$HOME/.config/hypr/scripts/session-look.sh" gnome'
+OnlyShowIn=GNOME;
+X-GNOME-Autostart-Phase=Initialization
+NoDisplay=true
