@@ -1,0 +1,14 @@
+/* ~/.config/rofi/config.rasi
+   Theme: Middle-earth — colors follow the current place (see shire.rasi) */
+configuration {
+    modi:                "drun,run,window";
+    show-icons:          true;
+    icon-theme:          "Adwaita";
+    display-drun:        "󰈸 ";
+    display-run:         " ";
+    display-window:      "󰖯 ";
+    drun-display-format: "{name}";
+    matching:            "fuzzy";
+    sort:                true;
+}
+@theme "~/.config/rofi/shire.rasi"
