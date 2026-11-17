@@ -1,0 +1,71 @@
+// ~/.config/waybar/config.jsonc
+// Theme: The Shire — a floating parchment-and-moss bar
+{
+    "layer": "top",
+    "position": "top",
+    "height": 34,
+    "margin-top": 10,
+    "margin-left": 14,
+    "margin-right": 14,
+    "spacing": 6,
+
+    "modules-left": ["hyprland/workspaces", "hyprland/window"],
+    "modules-center": ["clock"],
+    "modules-right": ["pulseaudio", "network", "cpu", "memory", "battery", "tray"],
+
+    // Workspaces named after places on the road from Bag End
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "persistent-workspaces": { "*": 5 },
+        "format-icons": {
+            "1": "Bag End",
+            "2": "Bree",
+            "3": "Rivendell",
+            "4": "Moria",
+            "5": "Lórien",
+            "6": "Rohan",
+            "7": "Gondor",
+            "8": "Mordor",
+            "9": "Grey Havens"
+        },
+        "on-scroll-up": "hyprctl dispatch workspace e-1",
+        "on-scroll-down": "hyprctl dispatch workspace e+1"
+    },
+
+    "hyprland/window": {
+        "max-length": 50,
+        "separate-outputs": true
+    },
+
+    "clock": {
+        "format": "󰔟  {:%H:%M}",
+        "format-alt": "󰃭  {:%A, %d %B %Y}",
+        "tooltip-format": "<tt>{calendar}</tt>"
+    },
+
+    "pulseaudio": {
+        "format": "{icon}  {volume}%",
+        "format-muted": "󰝟  hush",
+        "format-icons": { "default": ["󰕿", "󰖀", "󰕾"] },
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+    },
+
+    "network": {
+        "format-wifi": "󰖩  {essid}",
+        "format-ethernet": "󰈀  wired",
+        "format-disconnected": "󰖪  lost in Moria",
+        "tooltip-format": "{ifname}: {ipaddr}"
+    },
+
+    "cpu": { "format": "󰻠  {usage}%", "interval": 5 },
+    "memory": { "format": "󰍛  {percentage}%", "interval": 5 },
+
+    "battery": {
+        "states": { "warning": 25, "critical": 10 },
+        "format": "{icon}  {capacity}%",
+        "format-charging": "󰂄  {capacity}%",
+        "format-icons": ["󰁺", "󰁼", "󰁾", "󰂀", "󰁹"]
+    },
+
+    "tray": { "spacing": 8 }
+}
